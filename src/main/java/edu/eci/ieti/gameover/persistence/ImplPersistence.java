@@ -1,18 +1,17 @@
-package edu.eci.ieti.gameover.services.impl;
+package edu.eci.ieti.gameover.persistence;
 
 import edu.eci.ieti.gameover.model.Partida;
 import edu.eci.ieti.gameover.repository.PartidaRepository;
-import edu.eci.ieti.gameover.services.GameoverService;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class GameoverServiceImpl implements GameoverService {
+public class ImplPersistence implements GameoverPersistence {
     private PartidaRepository partidaRepository;
     @Override
     public List<Partida> findPartidaByDateAndActivo(Date fecha) {
-        List<Partida> partidas = getAll();
+        List<Partida> partidas = getAllPartidas();
         Date hoy = new Date();
         List<Partida> pActuales = new ArrayList<>();
         for (Partida partida : partidas) {
@@ -28,7 +27,7 @@ public class GameoverServiceImpl implements GameoverService {
 
 
     @Override
-    public List<Partida> getAll() {
+    public List<Partida> getAllPartidas() {
         return partidaRepository.findAll();
     }
 

@@ -14,7 +14,7 @@ public class GameOverController {
 
     @GetMapping
     public List<Partida> getAll(){
-        return gameoverService.getAll();
+        return gameoverService.getAllPartidas();
     }
 
     @GetMapping()
