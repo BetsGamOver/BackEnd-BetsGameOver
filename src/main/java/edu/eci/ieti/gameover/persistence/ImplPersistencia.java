@@ -1,13 +1,20 @@
 package edu.eci.ieti.gameover.persistence;
 
+import edu.eci.ieti.gameover.model.Partida;
 import edu.eci.ieti.gameover.model.Usuario;
 import edu.eci.ieti.gameover.repository.BetRepository;
+import edu.eci.ieti.gameover.repository.PartidaRepository;
 import edu.eci.ieti.gameover.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import java.util.HashMap;
+=======
+import java.util.ArrayList;
+import java.util.Date;
+>>>>>>> 1d8221f9c4c0540a6d242e91133cc27ddedb224b
 import java.util.List;
 
 @Service
@@ -21,6 +28,9 @@ public class ImplPersistencia implements GameoverPersistence {
 
     @Autowired
     private BetRepository betRepository;
+
+    @Autowired
+    private PartidaRepository partidaRepository;
 
     @Override
     public void saveUser(Usuario usuario){
@@ -58,7 +68,26 @@ public class ImplPersistencia implements GameoverPersistence {
     }
 
     @Override
+<<<<<<< HEAD
     public HashMap<String, String> findResult(Usuario user) throws GameOverException{
         return user.getResultados();
+=======
+    public List<Partida> findPartidaByDateAndActivo(Date fecha) {
+        List<Partida> partidas = getAllPartidas();
+        Date hoy = new Date();
+        List<Partida> pActuales = new ArrayList<>();
+        for (Partida partida : partidas) {
+            if(partida.getFecha() == hoy && partida.isActivo() == true){
+                pActuales.add(partida);
+            }
+
+        }
+        return pActuales;
+    }
+
+    @Override
+    public List<Partida> getAllPartidas() {
+        return partidaRepository.findAll();
+>>>>>>> 1d8221f9c4c0540a6d242e91133cc27ddedb224b
     }
 }
