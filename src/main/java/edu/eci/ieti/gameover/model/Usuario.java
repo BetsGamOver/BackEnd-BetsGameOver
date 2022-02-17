@@ -15,6 +15,8 @@ public class Usuario {
     public String password;
     public String email;
     public String numero;
+    public Deporte deporteFavorito;
+    public Equipo equipoFavorito;
 
     public Usuario(){}
 
@@ -86,6 +88,22 @@ public class Usuario {
         this.email = email;
     }
 
+    public Deporte getDeporteFavorito() {
+        return deporteFavorito;
+    }
+
+    public void setDeporteFavorito(Deporte deporteFavorito) {
+        this.deporteFavorito = deporteFavorito;
+    }
+
+    public Equipo getEquipoFavorito() {
+        return equipoFavorito;
+    }
+
+    public void setEquipoFavorito(Equipo equipoFavorito) {
+        this.equipoFavorito = equipoFavorito;
+    }
+
     public void changeValues(Usuario user){
         this.password = user.password;
         this.direccionResidencia = user.direccionResidencia;
@@ -103,6 +121,8 @@ public class Usuario {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", numero='" + numero + '\'' +
+                ", deporteFavorito=" + deporteFavorito +
+                ", equipoFavorito=" + equipoFavorito +
                 '}';
     }
 }
