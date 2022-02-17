@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -54,5 +55,10 @@ public class ImplPersistencia implements GameoverPersistence {
         Usuario oldUser = getUserByUsername(user.username);
         oldUser.changeValues(user);
         userRepository.save(oldUser);
+    }
+
+    @Override
+    public HashMap<String, String> findResult(Usuario user) throws GameOverException{
+        return user.getResultados();
     }
 }

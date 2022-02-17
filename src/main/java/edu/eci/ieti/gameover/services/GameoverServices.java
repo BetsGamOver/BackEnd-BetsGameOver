@@ -11,14 +11,7 @@ import java.util.List;
 @Service
 public class GameoverServices extends UserServices{
 
-
-    public String helloWorld(){
-
-        return "Hello World Hola Mundo";
-    }
-
     public void updateUser(Usuario user) throws GameOverException {
         gameoverPersistence.updateUser(user);
-
     }
 }
