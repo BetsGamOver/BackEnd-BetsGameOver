@@ -29,7 +29,6 @@ public class TeamController {
         return equipoService.getTeamByID(id);
     }
 
-
     @PostMapping
     public ResponseEntity<Equipo> create(@RequestBody EquipoDto equipoDto ) throws GameOverException {
         return ResponseEntity.ok( equipoService.addTeam(equipoDto));

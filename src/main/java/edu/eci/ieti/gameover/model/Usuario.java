@@ -20,17 +20,16 @@ public class Usuario {
 
     public Usuario(){}
 
-    public Usuario(String username,String nombreCompleto,String password,String email,
-                    String direccionResidencia, String numero
-                    ){
+    public Usuario(String username, String nombreCompleto, String direccionResidencia, String password, String email, String numero, Deporte deporteFavorito, Equipo equipoFavorito) {
         this.username = username;
         this.nombreCompleto = nombreCompleto;
+        this.direccionResidencia = direccionResidencia;
         this.password = password;
         this.email = email;
-        this.direccionResidencia = direccionResidencia;
         this.numero = numero;
+        this.deporteFavorito = deporteFavorito;
+        this.equipoFavorito = equipoFavorito;
     }
-
 
     public String getNombreCompleto() {
         return nombreCompleto;
@@ -109,6 +108,8 @@ public class Usuario {
         this.direccionResidencia = user.direccionResidencia;
         this.numero = user.numero;
         this.email = user.email;
+        this.deporteFavorito = user.deporteFavorito;
+        this.equipoFavorito = user.equipoFavorito;
     }
 
     @Override

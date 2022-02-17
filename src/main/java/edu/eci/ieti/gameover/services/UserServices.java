@@ -8,7 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class UserServices {
     @Autowired
     GameoverPersistence gameoverPersistence;
+
     public Usuario getUserByUsername(String username) throws GameOverException {
         return gameoverPersistence.getUserByUsername(username);
     }
+
+
+
+
+
 }
