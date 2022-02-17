@@ -35,7 +35,7 @@ public class GameOverController {
         return gameoverService.getAllPartidas();
     }
 
-    @GetMapping()
+    @GetMapping
     public List<Partida> findPartidaByDateAndActivo(@PathVariable Date fecha) {
         return gameoverService.findPartidaByDateAndActivo(fecha);
     }
