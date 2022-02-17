@@ -1,17 +1,19 @@
 package edu.eci.ieti.gameover.model;
 
+import edu.eci.ieti.gameover.model.Equipo;
+
 import java.util.Date;
 
 public class Partida {
 
     private String ID;
     private String name;
-    private String equipo1;
-    private String equipo2;
+    private Equipo equipo1;
+    private Equipo equipo2;
     private Date fecha;
     private boolean activo;
 
-    public Partida(String id, String name, String equipo1, String equipo2, Date fecha, boolean activo) {
+    public Partida(String id, String name, Equipo equipo1, Equipo equipo2, Date fecha, boolean activo) {
         ID = id;
         this.name = name;
         this.equipo1 = equipo1;
@@ -36,19 +38,19 @@ public class Partida {
         this.name = name;
     }
 
-    public String getEquipo1() {
+    public Equipo getEquipo1() {
         return equipo1;
     }
 
-    public void setEquipo1(String equipo1) {
+    public void setEquipo1(Equipo equipo1) {
         this.equipo1 = equipo1;
     }
 
-    public String getEquipo2() {
+    public Equipo getEquipo2() {
         return equipo2;
     }
 
-    public void setEquipo2(String equipo2) {
+    public void setEquipo2(Equipo equipo2) {
         this.equipo2 = equipo2;
     }
 
