@@ -20,11 +20,4 @@ public class GameOverController extends BaseController{
     @Autowired
     GameoverServices gameoverServices = null;
 
-
-    @RequestMapping("/helloworld")
-    public String helloWorld(){
-        return gameoverServices.helloWorld();
-    }
-
-
 }

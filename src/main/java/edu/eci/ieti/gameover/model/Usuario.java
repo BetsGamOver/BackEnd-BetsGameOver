@@ -21,15 +21,15 @@ public class Usuario {
 
     public Usuario(){}
 
-    public Usuario(String username,String nombreCompleto,String password,String email,String direccionResidencia, String numero){
-        this.username = username;
-        this.nombreCompleto = nombreCompleto;
-        this.password = password;
-        this.email = email;
-        this.direccionResidencia = direccionResidencia;
-        this.numero = numero;
-        HashMap<String,String> resultados = new HashMap<String,String>();
-    }
+        public Usuario(String username,String nombreCompleto,String password,String email,String direccionResidencia, String numero){
+            this.username = username;
+            this.nombreCompleto = nombreCompleto;
+            this.password = password;
+            this.email = email;
+            this.direccionResidencia = direccionResidencia;
+            this.numero = numero;
+            HashMap<String,String> resultados = new HashMap<String,String>();
+        }
 
     public HashMap<String, String> getResultados() { return resultados; }
 
