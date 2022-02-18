@@ -1,6 +1,8 @@
 package edu.eci.ieti.gameover.controllers;
 
 import edu.eci.ieti.gameover.model.Partida;
+import edu.eci.ieti.gameover.model.Usuario;
+import edu.eci.ieti.gameover.persistence.GameOverException;
 import edu.eci.ieti.gameover.services.GameoverServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,12 +36,12 @@ public class GameOverController {
 
     @GetMapping( "/{name}" )
     public Usuario findByName(@PathVariable String name) throws GameOverException {
-        return gameoverServices.getUserByUsername(name);
+        return gameoverService.getUserByUsername(name);
     }
 
     @PutMapping()
     public void update(@RequestBody Usuario usuario) throws GameOverException {
-        gameoverServices.updateUser(usuario);
+        gameoverService.updateUser(usuario);
     }
 
 

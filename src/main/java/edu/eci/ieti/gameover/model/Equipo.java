@@ -4,6 +4,7 @@ import edu.eci.ieti.gameover.dto.EquipoDto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
 import java.util.UUID;
 
 @Document(collection = "team")
@@ -13,6 +14,8 @@ public class Equipo {
     public String teamName;
     public Deporte sport;
     public int noPlayers;
+    private List<Jugador> jugadores;
+    private List<Partida> partidas;
 
     public Equipo(EquipoDto equipoDto) {
         this.teamId = UUID.randomUUID().toString();
@@ -53,6 +56,21 @@ public class Equipo {
         this.noPlayers = noPlayers;
     }
 
+    public List<Jugador> getJugadores() {
+        return jugadores;
+    }
+    public void setJugadores(List<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+    public List<Partida> getPartidas() {
+        return partidas;
+
+    }
+
+    public void setPartidas(List<Partida> partidas) {
+        this.partidas = partidas;
+    }
+
     public void update(EquipoDto equipoDto){
         this.teamName = equipoDto.getTeamName();
         this.sport = equipoDto.getSport();
@@ -70,20 +88,4 @@ public class Equipo {
     }
 }
 
-    private List<Jugador> jugadores;
-    private List<Partida> partidas;
-    public List<Jugador> getJugadores() {
-        return jugadores;
-    }
-    public void setJugadores(List<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
-    public List<Partida> getPartidas() {
-        return partidas;
 
-    }
-
-
-    public void setPartidas(List<Partida> partidas) {
-        this.partidas = partidas;
-    }
