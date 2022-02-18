@@ -12,6 +12,7 @@ public class Partida {
     private Equipo equipo2;
     private Date fecha;
     private boolean activo;
+    private String marcador;
 
     public Partida(String id, String name, Equipo equipo1, Equipo equipo2, Date fecha, boolean activo) {
         ID = id;

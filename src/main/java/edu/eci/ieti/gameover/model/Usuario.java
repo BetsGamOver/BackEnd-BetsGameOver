@@ -17,23 +17,22 @@ public class Usuario {
     public String password;
     public String email;
     public String numero;
-    public HashMap<String,String> resultados;
+    public HashMap<String,Partida> resultados;
 
     public Usuario(){}
 
-        public Usuario(String username,String nombreCompleto,String password,String email,String direccionResidencia, String numero){
+        public Usuario(String username,String nombreCompleto,String password,String email,String direccionResidencia, String numero) {
             this.username = username;
             this.nombreCompleto = nombreCompleto;
             this.password = password;
             this.email = email;
             this.direccionResidencia = direccionResidencia;
             this.numero = numero;
-            HashMap<String,String> resultados = new HashMap<String,String>();
+            HashMap<String, Partida> resultados = new HashMap<String,Partida>();
         }
+    public HashMap<String,Partida> getResultados() { return resultados; }
 
-    public HashMap<String, String> getResultados() { return resultados; }
-
-    public void setResultados(HashMap<String, String> resultados) { this.resultados = resultados; }
+    public void setResultados(HashMap<String,Partida> resultados) { this.resultados = resultados; }
 
     public String getNombreCompleto() {
         return nombreCompleto;
