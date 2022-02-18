@@ -19,6 +19,6 @@ public interface GameoverPersistence {
 
     void updateUser(Usuario user) throws GameOverException;
 
-    List<Partida> findResult(Usuario user) throws GameOverException;
+    List<String> findResult(Usuario user) throws GameOverException;
 
 }

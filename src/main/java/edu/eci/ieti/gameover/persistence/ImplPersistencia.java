@@ -65,8 +65,13 @@ public class ImplPersistencia implements GameoverPersistence {
     }
 
     @Override
-    public List<Partida> findResult(Usuario user) throws GameOverException {
-        return user.getResultados();
+    public List<String> findResult(Usuario user) throws GameOverException {
+        List<Partida> resultados = user.getResultados();
+        List<String> marcadores = new ArrayList<String>();
+        for(Partida p: resultados){
+            marcadores.add(p.getMarcador());
+        }
+        return marcadores;
     }
 
     public List<Partida> findPartidaByDateAndActivo(Date fecha) {
