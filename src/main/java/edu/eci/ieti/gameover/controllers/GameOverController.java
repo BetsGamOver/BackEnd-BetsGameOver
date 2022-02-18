@@ -31,4 +31,16 @@ public class GameOverController {
     public List<Partida> findPartidaByDateAndActivo(@PathVariable Date fecha) {
         return gameoverService.findPartidaByDateAndActivo(fecha);
     }
+
+    @GetMapping( "/{name}" )
+    public Usuario findByName(@PathVariable String name) throws GameOverException {
+        return gameoverServices.getUserByUsername(name);
+    }
+
+    @PutMapping()
+    public void update(@RequestBody Usuario usuario) throws GameOverException {
+        gameoverServices.updateUser(usuario);
+    }
+
+
 }

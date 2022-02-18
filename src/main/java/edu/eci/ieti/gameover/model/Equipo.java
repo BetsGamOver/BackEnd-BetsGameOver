@@ -1,42 +1,89 @@
 package edu.eci.ieti.gameover.model;
 
-import java.util.*;
+import edu.eci.ieti.gameover.dto.EquipoDto;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.UUID;
+
+@Document(collection = "team")
 public class Equipo {
-    private int codigo;
-    private String nombre;
+    @Id
+    public String teamId;
+    public String teamName;
+    public Deporte sport;
+    public int noPlayers;
+
+    public Equipo(EquipoDto equipoDto) {
+        this.teamId = UUID.randomUUID().toString();
+        this.teamName = equipoDto.getTeamName();
+        this.sport = equipoDto.getSport();
+        this.noPlayers = equipoDto.getNoPlayers();
+    }
+
+    public String getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public Deporte getSport() {
+        return sport;
+    }
+
+    public void setSport(Deporte sport) {
+        this.sport = sport;
+    }
+
+    public int getNoPlayers() {
+        return noPlayers;
+    }
+
+    public void setNoPlayers(int noPlayers) {
+        this.noPlayers = noPlayers;
+    }
+
+    public void update(EquipoDto equipoDto){
+        this.teamName = equipoDto.getTeamName();
+        this.sport = equipoDto.getSport();
+        this.noPlayers = equipoDto.getNoPlayers();
+    }
+
+    @Override
+    public String toString() {
+        return "Equipo{" +
+                "teamId='" + teamId + '\'' +
+                ", teamName='" + teamName + '\'' +
+                ", sport=" + sport +
+                ", noPlayers=" + noPlayers +
+                '}';
+    }
+}
+
     private List<Jugador> jugadores;
     private List<Partida> partidas;
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public List<Jugador> getJugadores() {
         return jugadores;
     }
-
     public void setJugadores(List<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
-
     public List<Partida> getPartidas() {
         return partidas;
+
     }
+
 
     public void setPartidas(List<Partida> partidas) {
         this.partidas = partidas;
     }
-}

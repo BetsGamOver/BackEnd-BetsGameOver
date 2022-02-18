@@ -18,22 +18,22 @@ public class Usuario {
     public String password;
     public String email;
     public String numero;
+    public Deporte deporteFavorito;
+    public Equipo equipoFavorito;
     public List<Partida> resultados;
 
     public Usuario(){}
 
-        public Usuario(String username,String nombreCompleto,String password,String email,String direccionResidencia, String numero) {
-            this.username = username;
-            this.nombreCompleto = nombreCompleto;
-            this.password = password;
-            this.email = email;
-            this.direccionResidencia = direccionResidencia;
-            this.numero = numero;
+    public Usuario(String username, String nombreCompleto, String direccionResidencia, String password, String email, String numero, Deporte deporteFavorito, Equipo equipoFavorito) {
+        this.username = username;
+        this.nombreCompleto = nombreCompleto;
+        this.direccionResidencia = direccionResidencia;
+        this.password = password;
+        this.email = email;
+        this.numero = numero;
+        this.deporteFavorito = deporteFavorito;
+        this.equipoFavorito = equipoFavorito;
             List<Partida> resultados = new ArrayList<Partida>();
-        }
-
-    public void addResultados(Partida p){
-        resultados.add(p);
     }
 
     public List<Partida> getResultados() { return resultados; }
@@ -96,11 +96,29 @@ public class Usuario {
         this.email = email;
     }
 
+    public Deporte getDeporteFavorito() {
+        return deporteFavorito;
+    }
+
+    public void setDeporteFavorito(Deporte deporteFavorito) {
+        this.deporteFavorito = deporteFavorito;
+    }
+
+    public Equipo getEquipoFavorito() {
+        return equipoFavorito;
+    }
+
+    public void setEquipoFavorito(Equipo equipoFavorito) {
+        this.equipoFavorito = equipoFavorito;
+    }
+
     public void changeValues(Usuario user){
         this.password = user.password;
         this.direccionResidencia = user.direccionResidencia;
         this.numero = user.numero;
         this.email = user.email;
+        this.deporteFavorito = user.deporteFavorito;
+        this.equipoFavorito = user.equipoFavorito;
     }
 
     @Override
@@ -113,6 +131,8 @@ public class Usuario {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", numero='" + numero + '\'' +
+                ", deporteFavorito=" + deporteFavorito +
+                ", equipoFavorito=" + equipoFavorito +
                 '}';
     }
 }
