@@ -23,6 +23,10 @@ public class Partida {
         this.activo = activo;
     }
 
+    public String getMarcador() { return marcador; }
+
+    public void setMarcador(String marcador) { this.marcador = marcador; }
+
     public String getID() {
         return ID;
     }

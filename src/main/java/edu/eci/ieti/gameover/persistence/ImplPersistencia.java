@@ -65,7 +65,7 @@ public class ImplPersistencia implements GameoverPersistence {
     }
 
     @Override
-    public HashMap<String, Partida> findResult(Usuario user) {
+    public List<Partida> findResult(Usuario user) throws GameOverException {
         return user.getResultados();
     }
 

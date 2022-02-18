@@ -3,6 +3,7 @@ package edu.eci.ieti.gameover.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class Usuario {
     public String password;
     public String email;
     public String numero;
-    public HashMap<String,Partida> resultados;
+    public List<Partida> resultados;
 
     public Usuario(){}
 
@@ -28,11 +29,16 @@ public class Usuario {
             this.email = email;
             this.direccionResidencia = direccionResidencia;
             this.numero = numero;
-            HashMap<String, Partida> resultados = new HashMap<String,Partida>();
+            List<Partida> resultados = new ArrayList<Partida>();
         }
-    public HashMap<String,Partida> getResultados() { return resultados; }
 
-    public void setResultados(HashMap<String,Partida> resultados) { this.resultados = resultados; }
+    public void addResultados(Partida p){
+        resultados.add(p);
+    }
+
+    public List<Partida> getResultados() { return resultados; }
+
+    public void setResultados(List<Partida> resultados) { this.resultados = resultados; }
 
     public String getNombreCompleto() {
         return nombreCompleto;

@@ -19,6 +19,6 @@ public interface GameoverPersistence {
 
     void updateUser(Usuario user) throws GameOverException;
 
-    HashMap<String, Partida> findResult(Usuario user) throws edu.eci.ieti.gameover.persistence.GameOverException;
+    List<Partida> findResult(Usuario user) throws GameOverException;
 
 }
